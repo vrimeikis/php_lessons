@@ -4,8 +4,15 @@
  * Baseinas
  */
 
+/**
+ * @param $ilgis
+ * @param $plotis
+ * @param $gylis
+ * @return float
+ */
 function plytelesBaseinui($ilgis, $plotis, $gylis)
 {
+    // Apskaiciuojamas baseino sienu plotas
     $baseinoPlotas = apskaiciuotiDugnoPlota($ilgis, $plotis) +
         apskaiciuotiSienuPlota($gylis, $ilgis) +
         apskaiciuotiSienuPlota($gylis, $plotis);
@@ -16,7 +23,7 @@ function plytelesBaseinui($ilgis, $plotis, $gylis)
 
 function apskaiciuotiDugnoPlota($ilgis, $plotis)
 {
-    return $ilgis * $plotis;
+    return $ilgis * $plotis; // Grazina dugno ploti
 }
 
 function apskaiciuotiSienuPlota($gylis, $ilgis)
