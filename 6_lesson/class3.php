@@ -28,6 +28,8 @@ $a->printModel();
 
 class Automobile
 {
+    const AUTO_COUNT = 3;
+
     private $autos;
 
     public function __construct()
@@ -37,6 +39,7 @@ class Automobile
 
     function setData($data, $index = 'pirmas')
     {
+        echo self::AUTO_COUNT;
         $this->autos->$index = $data;
     }
 
