@@ -1,0 +1,24 @@
+{
+  "cart": {
+    "products": [
+      {
+        "id": 23,
+        "title": "Duona",
+        "price": 1.23,
+        "quantity": 1
+      },
+      {
+        "id": 43,
+        "title": "Suris",
+        "price": 3.65,
+        "quantity": 1
+      }
+    ],
+    "total": 4.88
+  },
+  "customer": {
+    "name": "Petras",
+    "lastname": "Petraitis",
+    "email": "petras@petraitis.com"
+  }
+}
