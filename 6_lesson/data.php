@@ -1,15 +1,15 @@
 <?php
 
-$data = [
-    'cart' => [
+$data = (object)[
+    'cart' => (object)[
         'products' => [
-            [
+            (object)[
                 'id' => 23,
                 'title' => 'Duona',
                 'price' => 1.23,
                 'quantity' => 1,
             ],
-            [
+            (object)[
                 'id' => 43,
                 'title' => 'Suris',
                 'price' => 3.65,
@@ -18,7 +18,7 @@ $data = [
         ],
         'total' => 4.88,
     ],
-    'customer' => [
+    'customer' => (object)[
         'name' => 'Petras',
         'lastname' => 'Petraitis',
         'email' => 'petras@petraitis.com',
