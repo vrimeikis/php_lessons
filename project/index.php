@@ -7,13 +7,15 @@ use Shop\Models\Product;
 ?>
 
 <u>
+    <li><a href="index.php">Pagrindinis</a> </li>
     <li><a href="all_products.php">Visi produktai</a> </li>
+    <li><a href="newest_products.php">Naujausi</a> </li>
 </u>
 
 <?php
 $productClass = new Product($conn);
 
-$products = $productClass->getProducts()
+$products = $productClass->getProducts(2)
     ->fetchAll(PDO::FETCH_OBJ);
 
 ?>
