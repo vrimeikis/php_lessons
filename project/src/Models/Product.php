@@ -64,4 +64,37 @@ class Product
 
         $this->connection->query($sql);
     }
+
+    /**
+     * @param $productId
+     * @return bool|\PDOStatement
+     */
+    public function getById($productId)
+    {
+        $sql = sprintf(
+            "SELECT * FROM products WHERE id = '%d'",
+            $productId
+        );
+
+        $result = $this->connection->query($sql);
+
+        return $result;
+    }
+
+    public function updateProduct($productId, $productData)
+    {
+        $sql = sprintf(
+            "UPDATE products 
+              SET title = '%s', description = '%s',
+              price = '%s', quantity = '%d'
+              WHERE id = '%d'",
+            $productData['title'],
+            $productData['description'],
+            $productData['price'],
+            $productData['quantity'],
+            $productId
+        );
+
+        $this->connection->query($sql);
+    }
 }
