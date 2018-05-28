@@ -11,14 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::group(['prefix' => 'article'], function () {
@@ -28,5 +24,12 @@ Route::group(['prefix' => 'admin'], function () {
             ->name('article.create');
         Route::post('create', 'ArticleController@store');
 
+        Route::get('edit/{article}', 'ArticleController@edit')->name('article.edit');
+        Route::put('edit/{article}', 'ArticleController@update');
     });
 });
+
+Route::get('/', 'ArticleController@getList')
+    ->name('front.article.list');
+Route::get('article/{slug}', 'ArticleController@getBySlug')
+    ->name('front.article.once');

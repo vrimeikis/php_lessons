@@ -31,7 +31,9 @@
                                     <td>{{ $article->id }}</td>
                                     <td>{{ $article->title }}</td>
                                     <td>{{ $article->slug }}</td>
-                                    <td></td>
+                                    <td>
+                                        <a class="btn btn-success btn-sm" href="{{ route('article.edit', ['article' => $article->id]) }}">Edit</a>
+                                    </td>
                                 </tr>
                             @endforeach
 
